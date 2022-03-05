@@ -35,6 +35,25 @@ const swiperStep = new Swiper('.swiper-step', {
         }
     }
 });
+
+const swiperStafDocs = new Swiper('.swiper-staffing-docs', {
+    // Optional
+    direction: 'horizontal',
+    slidesPerView: 5,
+    spaceBetween: 10,
+    loop: true,
+    navigation: {
+        nextEl: ".next-slider-style",
+        prevEl: ".prev-slider-style",
+    },
+    // Responsive
+    breakpoints: {
+        1440: {
+            slidesPerView: 5,
+            spaceBetween: 10
+        }
+    }
+});
 swiperServices.params.speed = 1000;
 
 
