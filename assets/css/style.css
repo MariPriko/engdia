@@ -8,23 +8,9 @@
 
 @font-face {
     font-family: 'Gilroy';
-    src: url('../fonts/Gilroy-regularitalic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Gilroy';
     src: url('../fonts/Gilroy-medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
-}
-
-@font-face {
-    font-family: 'Gilroy';
-    src: url('../fonts/Gilroy-mediumitalic.woff') format('woff');
-    font-weight: 500;
-    font-style: italic;
 }
 
 @font-face {
@@ -36,13 +22,6 @@
 
 @font-face {
     font-family: 'Gilroy';
-    src: url('../fonts/Gilroy-semibolditalic.woff') format('woff');
-    font-weight: 600;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Gilroy';
     src: url('../fonts/Gilroy-bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
@@ -50,23 +29,9 @@
 
 @font-face {
     font-family: 'Gilroy';
-    src: url('../fonts/Gilroy-bolditalic.woff') format('woff');
-    font-weight: 700;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Gilroy';
     src: url('../fonts/Gilroy-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
-}
-
-@font-face {
-    font-family: 'Gilroy';
-    src: url('../fonts/Gilroy-blackitalic.woff') format('woff');
-    font-weight: 900;
-    font-style: italic;
 }
 
 /*-proxima-nova-*/
@@ -103,13 +68,6 @@
     src: url('../fonts/ProximaNova-Bold.woff') format('woff'), url('../fonts/ProximaNova-Bold.ttf') format('ttf');
     font-weight: 700;
     font-style: normal;
-}
-
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url('../fonts/ProximaNova-BoldIt.woff') format('woff'), url('../fonts/ProximaNova-BoldIt.ttf') format('ttf');
-    font-weight: 700;
-    font-style: italic;
 }
 
 /*-bebas neue-*/
@@ -182,7 +140,7 @@ div:focus {
 }
 
 .h1, .h2, h1, h2, .h3, .h4, .h5, .h6, h3, h4, h5, h6 {
-    font-family: "Gilroy", sans-serif;
+    /*font-family: "Gilroy", sans-serif;*/
     margin: 0;
     padding: 0;
 }
@@ -192,7 +150,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
-
+*, ::after, ::before {
+    box-sizing: border-box;
+}
 html {
     height: 100%;
 }
@@ -203,6 +163,7 @@ body {
     font-size: 14px;
     line-height: 20px;
     min-height: 100%;
+
     display: flex;
     flex-direction: column;
 }
@@ -248,6 +209,77 @@ body {
 }
 
 /*-general-*/
+/*-preloader-*/
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 1001;
+}
+
+.preloader__row {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+}
+
+.preloader__item {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    background-color: var(--accent);
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    animation: preloader-bounce 2s infinite ease-in-out;
+}
+
+.preloader__item:last-child {
+    top: auto;
+    bottom: 0;
+    animation-delay: -1s;
+}
+
+@keyframes preloader-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes preloader-bounce {
+    0%,
+    100% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+.loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+}
+
+.loaded .preloader {
+    display: none;
+    transition: 0.3s opacity;
+    opacity: 0;
+}
+
+body.no-scroll{
+    overflow-y: hidden;
+}
 .content {
     display: flex;
     flex-direction: column;
@@ -316,6 +348,7 @@ body {
     text-transform: uppercase;
     color: #000000;
     padding: 29px 58px;
+    cursor: pointer;
     transition: all .2s ease;
 }
 
@@ -353,7 +386,7 @@ body {
 
 /*-header-*/
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -361,6 +394,18 @@ body {
     background-color: transparent;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
+    transition: all .2s;
+}
+.header.sticky-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    background-color: rgba(0, 78, 134, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    transition: all .2s;
 }
 
 .header-wrap {
@@ -398,8 +443,143 @@ body {
     transition: all .3s;
 }
 
-.burger-menu__toggle-menu {
+.burger-theme-style{
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    transition: all .2s;
+}
+.burger-menu__toggle-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 360px;
+    transform: translateX(-380px);
+    z-index: 15;
+    background: linear-gradient(180deg, rgba(0, 78, 134, 0.9) 0%, rgba(10, 65, 104, 0.9) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    overflow-y: auto;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all .2s;
+}
+.burger-menu__toggle-menu.show{
+    transform: translateX(0);
+    transition: all .2s;
+}
+
+.burger-close{
+    cursor: pointer;
+}
+.burger-close svg{
+    width: 16px;
+    height: 16px;
+}
+.burger-close svg path{
+    stroke: var(--accent);
+    transition: all .2s;
+}
+.burger-close:hover svg path{
+    stroke: var(--accent);
+    transition: all .2s;
+}
+.burger-logo-link {
+    display: block
+}
+.burger-menu-wrapper{
+    display: flex;
+    flex-direction: column;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.burger-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    width: 100%;
+}
+.burger-body{
+    flex: 1;
+    padding: 15px;
+}
+.burger-footer{
+    width: 100%;
+    padding: 15px;
+}
+.burger-link{
+    font-family: "Gilroy", sans-serif;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 13px;
+    transition: all .2s;
+}
+.burger-link:last-child{
+    margin-bottom: 0;
+}
+.burger-link:hover{
+    color: var(--accent-h);
+    transition: all .2s;
+}
+.burger-footer__item{
+    margin: 0 0 15px 0;
+}
+.burger-footer__link{
+    display: flex;
+    flex-direction: row;
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    align-items: center;
+    font-family: "Gilroy", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #ffffff;
+    transition: all .2s;
+}
+.burger-footer__link:hover{
+    color: var(--accent-h);
+    transition: all .2s;
+}
+.burger-footer__link svg{
+    height: 12px;
+    width: auto;
+    margin-right: 10px;
+}
+.burger-footer__link svg path{
+    fill: var(--accent-h);
+}
+.burger-footer__btn .btn-adv{
+    color: #000000;
+    padding: 15px 5px;
+    transition: all .2s ease;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .logo-link {
@@ -677,7 +857,6 @@ body {
     }
 }
 
-
 /*-about area-*/
 .about-screen {
     width: 100%;
@@ -880,9 +1059,6 @@ body {
     text-align: left;
     margin-bottom: 35px;
     height: 78px;
-
-    /*white-space: pre-line;*/
-
     -webkit-line-clamp: 3;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -1041,7 +1217,9 @@ body {
     padding: 80px 0;
     width: 50%;
 }
-
+.complex-steps__step-3{
+    background: #F5F5F5;
+}
 .step3-box-description {
     display: -webkit-flex;
     display: flex;
@@ -1049,7 +1227,6 @@ body {
     -webkit-justify-content: flex-end;
     flex-shrink: 0;
     -webkit-flex-shrink: 0;
-    background: #F5F5F5;
     padding: 80px 0;
     width: 50%;
 }
@@ -1329,7 +1506,6 @@ body {
     font-weight: 800;
     width: 40%;
     margin-right: 10%;
-    /*padding: 0 25px 0 0;*/
 }
 
 .accent-color {
@@ -1518,6 +1694,7 @@ body {
     color: #000000;
     font-weight: 600;
 }
+
 /*-slider-*/
 .wrapper-slider-docs {
     max-width: 100%;
@@ -1619,7 +1796,6 @@ body {
 }
 
 /*-price screen-*/
-
 .price-screen{
     padding: 0;
     background-image: url("../images/content/bgGray.png");
@@ -1685,7 +1861,6 @@ body {
     font-style: italic;
     font-size: 18px;
     line-height: 28px;
-    /* or 156% */
     letter-spacing: -0.5px;
     color: #707070;
 }
@@ -1757,8 +1932,8 @@ body {
     margin-bottom: 3px;
     color: rgba(21, 21, 21, 0.7);
 }
-/*- reviews screen-*/
 
+/*- reviews screen-*/
 .reviews-screen{
     background-color: #fff;
     padding: 100px 0;
@@ -1897,27 +2072,6 @@ body {
     color: #FFFFFF;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*-footer-*/
 .footer {
     background: #FFFFFF;
@@ -1997,3 +2151,183 @@ body {
 .footer__contact-title svg path {
     fill: rgba(21, 21, 21, 0.5);
 }
+
+/**- Modals styles-**/
+.body-blackout {
+    position: fixed;
+    z-index: -1010;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: rgba(0, 0, 0, 0.65);
+    display: none;
+    transition: all .2s;
+}
+.body-blackout.is-blacked-out {
+    display: block;
+    z-index: 1010;
+    transition: all .2s;
+}
+
+.popup-modal {
+    height: auto;
+    max-height: 95%;
+    overflow-y: auto;
+    width: 50%;
+    background-color: #fff;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .1s;
+    z-index: -1;
+    border-radius: 3px;
+}
+.popup-modal.is--visible {
+    opacity: 1;
+    z-index: 1011;
+    pointer-events: auto;
+    transition: all .1s;
+}
+.popup-modal__close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+.popup-modal__close svg path{
+    fill: #151515;
+}
+.popup-modal__close:hover svg path{
+    stroke: var(--accent-bl);
+}
+.modal-title{
+    font-size: 26px;
+    width: 75%;
+    text-align: center;
+    margin: 0 auto 20px;
+}
+.modal-comment{
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.5px;
+    color: rgba(51, 51, 51, 0.7);
+    width: 75%;
+    margin: 0 auto 20px;
+}
+/* input focus effects css */
+:focus {
+    outline: none;
+}
+.form-body{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.input-wrap input{
+    font-size: 16px;
+    line-height: 38px;
+    font-family: "Gilroy", sans-serif;
+    color: #000;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+.input-wrap textarea{
+    font-size: 16px;
+    line-height: 38px;
+    font-family: "Gilroy", sans-serif;
+    color: #000;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100px;
+    resize: none;
+    max-height: 100px;
+    letter-spacing: 1px;
+}
+.input-wrap{
+    width: 44.33%;
+    margin: 8px 15px 20px;
+    position: relative;
+}
+.textarea-wrap{
+    width: 92.33%;
+    margin: 8px 20px 20px;
+    position: relative;
+}
+.form-feedback .btn-adv svg{
+    height: 13px;
+    width: auto;
+}
+.form-feedback .btn-adv svg path{
+    fill: #171717;
+}
+.form-body{
+    margin-bottom: 0;
+}
+.form-body__btn{
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.effect-input {
+    border: 0;
+    padding: 4px 0;
+    border-bottom: 1px solid #959595;
+    background-color: transparent;
+}
+.effect-input ~ .focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-bl);
+    transition: 0.4s;
+}
+textarea.effect-input ~ .focus-border {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-bl);
+    transition: 0.4s;
+}
+.effect-input:focus ~ .focus-border,
+.has-content.effect-input ~ .focus-border {
+    width: 100%;
+    transition: 0.4s;
+    left: 0;
+}
+.effect-input ~ label {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 10px;
+    color: #aaa;
+    transition: 0.3s;
+    z-index: -1;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    font-family: 'Gilroy', sans-serif;
+}
+.effect-input:focus ~ label, .has-content.effect-input ~ label {
+    top: -16px;
+    font-size: 14px;
+    color: var(--accent-bl);
+    transition: 0.3s;
+}
+/* input focus effects css End */
