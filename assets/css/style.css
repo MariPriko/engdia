@@ -154,7 +154,7 @@ div:focus {
 }
 
 .h1, .h2, h1, h2, .h3, .h4, .h5, .h6, h3, h4, h5, h6 {
-    /*font-family: "Gilroy", "Proxima Nova", sans-serif;*/
+    /*font-family: "Gilroy", sans-serif;*/
     margin: 0;
     padding: 0;
 }
@@ -189,7 +189,7 @@ body {
 }
 
 .gilroy {
-    font-family: "Gilroy", "Proxima Nova", sans-serif;
+    font-family: 'Gilroy', sans-serif;
 }
 
 .bebas {
@@ -280,7 +280,7 @@ body.no-scroll{
 }
 
 .btn-adv {
-    font-family: "Gilroy", "Proxima Nova", sans-serif;
+    font-family: "Gilroy", sans-serif;
     font-weight: 800;
     position: relative;
     display: flex;
@@ -469,7 +469,7 @@ body.no-scroll{
     padding: 15px;
 }
 .burger-link{
-    font-family: "Gilroy", "Proxima Nova", sans-serif;
+    font-family: "Gilroy", sans-serif;
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -497,7 +497,7 @@ body.no-scroll{
     display: -webkit-flex;
     -webkit-flex-direction: row;
     align-items: center;
-    font-family: "Gilroy", "Proxima Nova", sans-serif;
+    font-family: "Gilroy", sans-serif;
     font-size: 14px;
     line-height: 18px;
     letter-spacing: 2px;
@@ -2184,7 +2184,7 @@ body.no-scroll{
 .input-wrap input{
     font-size: 16px;
     line-height: 38px;
-    font-family: "Gilroy", "Proxima Nova", sans-serif;
+    font-family: "Gilroy", sans-serif;
     color: #000;
     width: 100%;
     box-sizing: border-box;
@@ -2193,7 +2193,7 @@ body.no-scroll{
 .input-wrap textarea{
     font-size: 16px;
     line-height: 38px;
-    font-family: "Gilroy", "Proxima Nova", sans-serif;
+    font-family: "Gilroy", sans-serif;
     color: #000;
     width: 100%;
     box-sizing: border-box;
