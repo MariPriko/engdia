@@ -1,6 +1,7 @@
 /*-gilroy-*/
 @font-face {
     font-family: 'Gilroy';
+    src: local('../fonts/Gilroy-Regular.woff');
     src: url('../fonts/Gilroy-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -8,6 +9,7 @@
 
 @font-face {
     font-family: 'Gilroy';
+    src: local('../fonts/Gilroy-Medium.woff');
     src: url('../fonts/Gilroy-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
@@ -15,6 +17,7 @@
 
 @font-face {
     font-family: 'Gilroy';
+    src: local('../fonts/Gilroy-Semibold.woff');
     src: url('../fonts/Gilroy-Semibold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
@@ -22,6 +25,7 @@
 
 @font-face {
     font-family: 'Gilroy';
+    src: local('../fonts/Gilroy-Bold.woff');
     src: url('../fonts/Gilroy-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
@@ -29,6 +33,7 @@
 
 @font-face {
     font-family: 'Gilroy';
+    src: local('../fonts/Gilroy-Black.woff');
     src: url('../fonts/Gilroy-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
@@ -37,6 +42,7 @@
 /*-proxima-nova-*/
 @font-face {
     font-family: 'Proxima Nova';
+    src: local('../fonts/ProximaNova-Regular.woff');
     src: url('../fonts/ProximaNova-Regular.woff') format('woff'), url('../fonts/ProximaNova-Regular.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
@@ -44,6 +50,7 @@
 
 @font-face {
     font-family: 'Proxima Nova';
+    src: local('../fonts/ProximaNova-RegularIt.woff');
     src: url('../fonts/ProximaNova-RegularIt.woff') format('woff'), url('../fonts/ProximaNova-RegularIt.ttf') format('ttf');
     font-weight: normal;
     font-style: italic;
@@ -51,6 +58,7 @@
 
 @font-face {
     font-family: 'Proxima Nova';
+    src: local('../fonts/ProximaNova-Semibold.woff');
     src: url('../fonts/ProximaNova-Semibold.woff') format('woff'), url('../fonts/ProximaNova-Semibold.ttf') format('ttf');
     font-weight: 600;
     font-style: normal;
@@ -58,6 +66,7 @@
 
 @font-face {
     font-family: 'Proxima Nova';
+    src: local('../fonts/ProximaNova-SemiboldIt.woff');
     src: url('../fonts/ProximaNova-SemiboldIt.woff') format('woff'), url('../fonts/ProximaNova-SemiboldIt.ttf') format('ttf');
     font-weight: 600;
     font-style: italic;
@@ -65,6 +74,7 @@
 
 @font-face {
     font-family: 'Proxima Nova';
+    src: local('../fonts/ProximaNova-Bold.woff');
     src: url('../fonts/ProximaNova-Bold.woff') format('woff'), url('../fonts/ProximaNova-Bold.ttf') format('ttf');
     font-weight: 700;
     font-style: normal;
@@ -73,6 +83,7 @@
 /*-bebas neue-*/
 @font-face {
     font-family: 'Bebas Neue';
+    src: local('../fonts/bebasneueregular.woff');
     src: url('../fonts/bebasneueregular.woff') format('woff'), url('../fonts/bebasneueregular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
@@ -80,6 +91,7 @@
 
 @font-face {
     font-family: 'Bebas Neue';
+    src: local('../fonts/bebasneuebold.woff');
     src: url('../fonts/bebasneuebold.woff') format('woff'), url('../fonts/bebasneuebold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
@@ -87,6 +99,7 @@
 
 @font-face {
     font-family: 'Bebas Neue';
+    src: local('../fonts/bebasneuebook.woff');
     src: url('../fonts/bebasneuebook.woff') format('woff'), url('../fonts/bebasneuebook.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
@@ -94,6 +107,7 @@
 
 @font-face {
     font-family: 'Bebas Neue';
+    src: local('../fonts/bebasneuelight.woff');
     src: url('../fonts/bebasneuelight.woff') format('woff'), url('../fonts/bebasneuelight.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
