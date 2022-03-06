@@ -1,5 +1,12 @@
+
 $(document).ready(function () {
     'use strict';
+
+    $('body').addClass('loaded_hiding');
+    setTimeout(function () {
+        $('body').addClass('loaded');
+        $('body').removeClass('loaded_hiding');
+    }, 1000);
 
 // Fixed header
     function stickHeader() {
