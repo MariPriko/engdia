@@ -1137,8 +1137,16 @@
         margin: 0 auto 15px;
     }
     .popup-modal__close svg{
-        width: 15px;
+        width: 13px;
+        height: auto;
     }
+    .popup-modal__close {
+        position: absolute;
+        right: 9px;
+        top: 9px;
+        cursor: pointer;
+    }
+
 }
 @media (max-width: 576px) {
     .header-wrap__contact-box {

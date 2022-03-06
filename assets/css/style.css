@@ -2322,7 +2322,6 @@ textarea.effect-input ~ .focus-border {
     z-index: -1;
     letter-spacing: 0.5px;
     font-size: 16px;
-    font-family: 'Gilroy', sans-serif;
 }
 .effect-input:focus ~ label, .has-content.effect-input ~ label {
     top: -16px;
