@@ -1,12 +1,13 @@
 
 $(document).ready(function () {
     'use strict';
-
-    $('body').addClass('loaded_hiding');
-    setTimeout(function () {
-        $('body').addClass('loaded');
-        $('body').removeClass('loaded_hiding');
-    }, 1000);
+    window.onload = function () {
+        document.body.classList.add('loaded_hiding');
+        window.setTimeout(function () {
+            document.body.classList.add('loaded');
+            document.body.classList.remove('loaded_hiding');
+        }, 700);
+    };
 
 // Fixed header
     function stickHeader() {
